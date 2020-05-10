@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version
-notes_version="0.5.0"
+notes_version="0.5.1"
 
 # Default Date string before config
 QUICKNOTE_FORMAT="quicknote-%Y-%m-%d"
@@ -31,7 +31,7 @@ without_notes_dir() {
 }
 
 ls_notes() {
-    local ls_output=$(ls -p "$notes_dir/$*" 2>&1)
+    local ls_output=$(ls -p "$notes_dir/$*" 2>&1 | grep -v "~$")
     local ls_result=$?
     local formatted_output
 
